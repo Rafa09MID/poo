@@ -10,3 +10,4 @@ numCliente,nombreCliente,fechaAlta
 9,Marta Ramírez,2021-09-14
 10,Ricardo Díaz,2021-10-01
 11,Rafa Medina,2026-05-17
+12,Dafne Hérnandez,2026-05-17

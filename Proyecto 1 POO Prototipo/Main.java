@@ -9,7 +9,7 @@ public class Main {
 
         do {
 
-            System.out.println("--------------------------------------- \n1) Mostrar cleinte registrados \n2) Mostrar todas las facturas ");
+            System.out.println("--------------------------------------- \n1) Mostrar clientes registrados \n2) Mostrar todas las facturas ");
             System.out.println("3) Crear factura \n4) Mostrar facturas de un cliente \n5) Agregar cliente \n6) Salir \n---------------------------------------");
             opcion = board.nextInt();
             board.nextLine();
@@ -21,7 +21,7 @@ public class Main {
                     break;
 
                 case 2 :
-                    Factura.cargarFacturas();
+                    //Factura.cargarFacturas();
                     break;
 
                 case 3 :

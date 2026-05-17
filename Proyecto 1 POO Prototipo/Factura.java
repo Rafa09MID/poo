@@ -8,7 +8,8 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Factura extends Servicio {
-    private static ArrayList<Cliente> ListCliente = gestionDatos.cargarDatos();
+    private static ArrayList<Cliente> ListCliente = gestionDatos.cargarDatos()
+
     private static final String ARCHIVO_FACTURAS = "facturas.txt";
     private static final String ARCHIVO_CLIENTES = "clientes.txt";
     private int numFactura;
@@ -90,7 +91,7 @@ public class Factura extends Servicio {
       
     }
 
-    public String toCsvLine(Cliente cliente) {
+    public String toTxtLine(Cliente cliente) {
         return cliente + "";
     }
     

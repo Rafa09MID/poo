@@ -73,7 +73,7 @@ public class gestionDatos {
 
     }
 
-    public static void guadrarFactura(Factura fatura) {
+    /*public static void guadrarFactura(Factura fatura) {
         File file = new File(ARCHIVO_FACTURA);
         boolean existe = file.exists();
 
@@ -90,6 +90,6 @@ public class gestionDatos {
             System.err.println("Error" + e.getMessage());
         }
 
-    }
+    }*/
     
 }
