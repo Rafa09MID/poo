@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+//no se
 
 public class Cliente {
     private static final String ARCHIVO_CLIENTE = "clientes.txt";
