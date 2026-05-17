@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-     private static ArrayList<Cliente> clientes = Cliente.cargarDatos();
+     private static ArrayList<Cliente> clientes = gestionDatos.cargarDatos();
     public static void main(String[] args) {
         Scanner board = new Scanner(System.in);
         int opcion;
@@ -33,7 +33,7 @@ public class Main {
 
 
                 case 5 : 
-                    Cliente.guardarCliente(board,clientes);
+                    gestionDatos.guardarCliente(board,clientes);
                     break;
 
 

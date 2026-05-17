@@ -8,9 +8,9 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Factura extends Servicio {
-    private static ArrayList<Cliente> ListCliente = Cliente.cargarDatos();
-    private static final String ARCHIVO_FACTURAS = "facturas.csv";
-    private static final String ARCHIVO_CLIENTES = "clientes.csv";
+    private static ArrayList<Cliente> ListCliente = gestionDatos.cargarDatos();
+    private static final String ARCHIVO_FACTURAS = "facturas.txt";
+    private static final String ARCHIVO_CLIENTES = "clientes.txt";
     private int numFactura;
     private double iva;
     private double total;
@@ -28,10 +28,7 @@ public class Factura extends Servicio {
         Cliente cliente;
         int numElegido = 0;
         int opcion;
-        File file = new File(ARCHIVO_FACTURAS);
-        boolean existe = file.exists();
-
-
+        
         while (true) {
             System.out.println("1) Mostrar usuarios registrados \n2) Crear la factura");
             opcion = scanner.nextInt();
@@ -49,32 +46,11 @@ public class Factura extends Servicio {
                     System.out.println("Ingresa el importe: ");
                     double importe = scanner.nextDouble();
 
-                    
-
-
-
                 default:
                     break;
             }
-
-            
-
         }   
 
-    
-    
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file,true))) {
-            if(!existe) {
-                bw.write("| Cliente | Numero de cliente | Fecha de emisión | descripción del servicio | importe | iva | total ");
-                bw.newLine();      
-            }
-
-            bw.write();
-            bw.newLine();
-
-        } catch (IOException e) {
-            System.err.println("Error" + e.getMessage());
-        }
     }
 
     public static Cliente buscarNum(int numero) {
@@ -114,19 +90,19 @@ public class Factura extends Servicio {
       
     }
 
-    public static void cargarFacturas() {
-
-    }
-
     public String toCsvLine(Cliente cliente) {
         return cliente + "";
     }
     
     @Override
-    public double calcularTotal(double importe) {
-        double iva = importe * 0.16;
+    public double calcularTotal(double importe, double iva) {
 
-        return iva; //Provicional
+        return total += importe + iva; //Provicional
+    }
+
+    @Override
+    public double calcularIva(double importe) {
+        return iva = importe * 0.16;
     }
 
     public int getNumFactura() {
@@ -153,5 +129,4 @@ public class Factura extends Servicio {
         this.total = total;
     }
 
-    
 }

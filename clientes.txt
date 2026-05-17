@@ -9,3 +9,4 @@ numCliente,nombreCliente,fechaAlta
 8,Elena Ruiz,2021-08-30
 9,Marta Ramírez,2021-09-14
 10,Ricardo Díaz,2021-10-01
+11,Rafa Medina,2026-05-17

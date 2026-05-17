@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class gestionDatos {
     private static final String ARCHIVO_CLIENTE = "clientes.txt";
+    private static final String ARCHIVO_FACTURA = "facturas.txt";
     
     public gestionDatos() {
     }
@@ -69,6 +70,25 @@ public class gestionDatos {
         }
         return clientes;
 
+
+    }
+
+    public static void guadrarFactura(Factura fatura) {
+        File file = new File(ARCHIVO_FACTURA);
+        boolean existe = file.exists();
+
+         try (BufferedWriter bw = new BufferedWriter(new FileWriter(file,true))) {
+            if(!existe) {
+                bw.write("| Cliente | Numero de cliente | Fecha de emisión | descripción del servicio | importe | iva | total ");
+                bw.newLine();      
+            }
+
+            bw.write();
+            bw.newLine();
+
+        } catch (IOException e) {
+            System.err.println("Error" + e.getMessage());
+        }
 
     }
     
