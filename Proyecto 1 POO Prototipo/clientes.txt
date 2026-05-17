@@ -1,0 +1,11 @@
+numCliente,nombreCliente,fechaAlta
+1,Juan Pérez,2021-01-10
+2,Ana Gómez,2021-02-15
+3,Carlos Sánchez,2021-03-20
+4,María López,2021-04-05
+5,Pedro Martínez,2021-05-12
+6,Lucía Fernández,2021-06-18
+7,Diego Torres,2021-07-22
+8,Elena Ruiz,2021-08-30
+9,Marta Ramírez,2021-09-14
+10,Ricardo Díaz,2021-10-01
