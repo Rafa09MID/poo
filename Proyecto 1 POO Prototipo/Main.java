@@ -1,6 +1,8 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
+     private static ArrayList<Cliente> cliente = Cliente.cargarDatos();
     public static void main(String[] args) {
         Scanner board = new Scanner(System.in);
         int opcion;
@@ -8,14 +10,14 @@ public class Main {
         do {
 
             System.out.println("--------------------------------------- \n1) Mostrar cleinte registrados \n2) Mostrar todas las facturas ");
-            System.out.println("\n3) Crear factura \n4) Mostrar facturas de un cliente \n5) Salir \n---------------------------------------");
+            System.out.println("3) Crear factura \n4) Mostrar facturas de un cliente \n5) Agregar cliente \n6) Salir \n---------------------------------------");
             opcion = board.nextInt();
             System.lineSeparator();
 
 
             switch(opcion) {
                 case 1 :
-                    mostrarClienteRegistrados();
+                    Cliente.mostrarClienteRegistrados(cliente);
                     break;
 
                 case 2 :
@@ -23,20 +25,21 @@ public class Main {
                     break;
 
                 case 3 :
-                    Factura.crearFactura();
+                    //Factura.crearFactura();
                     break;
 
                 case 4 :
-                    Factura.filtrarFacturas();
+                    //Factura.filtrarFacturas();
 
 
                 case 5 : 
-                    System.out.println("Saliendo");
-                    System.exit(0);
+                    Cliente.guardarCliente(board);
                     break;
 
+
                 case 6 :
-                    Cliente.guardarCliente(board);
+                    System.out.println("Saliendo");
+                    System.exit(0);
                     break;
 
                 default: 
