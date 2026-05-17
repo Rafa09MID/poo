@@ -8,7 +8,9 @@ public abstract class Servicio {
         this.importe = importe;
     }
 
-    public abstract double calcularTotal(double valor);
+    public abstract double calcularTotal(double importe, double iva);
+
+    public abstract double calcularIva(double valor);
 
     public void mostrarDetalle() {
         System.out.println("Descripción: " + descripcion + " | Importe: " + importe);
