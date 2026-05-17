@@ -9,8 +9,8 @@ import java.util.ArrayList;
 
 public class Factura extends Servicio {
     private static ArrayList<Cliente> ListCliente = Cliente.cargarDatos();
-    private static final String ARCHIVO_FACTURAS = "facturas.csv";
-    private static final String ARCHIVO_CLIENTES = "clientes.csv";
+    private static final String ARCHIVO_FACTURAS = "facturas.txt";
+    private static final String ARCHIVO_CLIENTES = "clientes.txt";
     private int numFactura;
     private double iva;
     private double total;
