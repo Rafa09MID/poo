@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-     private static ArrayList<Cliente> cliente = Cliente.cargarDatos();
+     private static ArrayList<Cliente> clientes = Cliente.cargarDatos();
     public static void main(String[] args) {
         Scanner board = new Scanner(System.in);
         int opcion;
@@ -12,12 +12,12 @@ public class Main {
             System.out.println("--------------------------------------- \n1) Mostrar cleinte registrados \n2) Mostrar todas las facturas ");
             System.out.println("3) Crear factura \n4) Mostrar facturas de un cliente \n5) Agregar cliente \n6) Salir \n---------------------------------------");
             opcion = board.nextInt();
-            System.lineSeparator();
+            board.nextLine();
 
 
             switch(opcion) {
                 case 1 :
-                    Cliente.mostrarClienteRegistrados(cliente);
+                    Cliente.mostrarClienteRegistrados(clientes);
                     break;
 
                 case 2 :
@@ -25,7 +25,7 @@ public class Main {
                     break;
 
                 case 3 :
-                    //Factura.crearFactura();
+                    Factura.crearFactura(board);
                     break;
 
                 case 4 :
@@ -33,7 +33,7 @@ public class Main {
 
 
                 case 5 : 
-                    Cliente.guardarCliente(board);
+                    Cliente.guardarCliente(board,clientes);
                     break;
 
 
