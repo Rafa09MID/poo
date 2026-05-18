@@ -73,9 +73,10 @@ public class gestionDatos {
 
     }
 
-    /*public static void guadrarFactura(Factura fatura) {
+    public static void guadrarFactura(Factura factura) {
         File file = new File(ARCHIVO_FACTURA);
         boolean existe = file.exists();
+        
 
          try (BufferedWriter bw = new BufferedWriter(new FileWriter(file,true))) {
             if(!existe) {
@@ -83,13 +84,13 @@ public class gestionDatos {
                 bw.newLine();      
             }
 
-            bw.write();
+            bw.write(Factura.toTxt(factura));
             bw.newLine();
 
         } catch (IOException e) {
             System.err.println("Error" + e.getMessage());
         }
 
-    }*/
+    }
     
 }
