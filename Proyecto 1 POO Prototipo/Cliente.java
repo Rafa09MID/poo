@@ -5,11 +5,12 @@ import java.io.FileWriter;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 //no se
 
 public class Cliente {
     private static final String ARCHIVO_CLIENTE = "clientes.txt";
-
 
     private int numCliente;
     private String nombreCliente;
@@ -27,49 +28,57 @@ public class Cliente {
         this.fechaAlta = fechaAlta;
     }
 
-    public static void guardarCliente(Scanner Scanner) {
-        File file = new File(ARCHIVO_CLIENTE);
-        boolean existe = file.exists();
+    
 
-        Cliente cliente = new Cliente();
-        while (true) {
-            
-            Scanner.nextLine();
-            System.out.println("Ingrese el nombre del cliente: ");
-            cliente.setNombreCliente(Scanner.nextLine());
 
-            System.out.println("Ingrese num");
-            cliente.setNumCliente(Scanner.nextInt());
-            Scanner.nextLine();
+    public static void mostrarClienteRegistrados(List<Cliente> clientes) {
+        System.out.println("| Número de cliente | Nombre Cliente | Fecha de alta");
+        System.out.println("-----------------------------------------------------");
 
-            System.out.println("Ingrese Fecha de alta");
-            cliente.setFechaAlta(Scanner.nextLine());
-            break;
+        for(Cliente cliente : clientes) {
+            System.out.printf(" %d, %s, %s \n",cliente.getNumCliente(), cliente.getNombreCliente(), cliente.getFechaAlta());
         }
-        
+    }
 
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file,true))) {
-            if(!existe) {
-                bw.write("| Cliente | Numero de cliente | Fecha de alta");
-                bw.newLine();   
+    public static int obtenerNumCliente() {
+        File file = new File(ARCHIVO_CLIENTE);
+        if(!file.exists()) {
+            return 1;
+        }
+
+        int ultimoNumero = 0;
+        try(BufferedReader br = new BufferedReader(new FileReader(ARCHIVO_CLIENTE))) {
+            String line;
+            boolean primero = true;
+
+            while((line = br.readLine()) != null) {
+                if(primero) {
+                    primero = false;
+                    continue;
+                }
+                
+                if(!line.trim().isBlank()) {
+                    String[] parts = line.split(",");
+                    
+                    if(parts.length >= 1) {
+                        try {
+                            ultimoNumero = Integer.parseInt(parts[0]);
+                        } catch (NumberFormatException e) {
+                            System.out.println(e.getMessage());
+                        }
+                    }
+                }
             }
 
-            bw.write(cliente.toCsvLine());
-            bw.newLine();
-
         } catch (IOException e) {
-            System.err.println("Error" + e.getMessage());
+            System.err.println(e.getMessage());
         }
-
+        return ultimoNumero + 1;
     }
 
     public String toCsvLine() {
-        return "Cliente: " + nombreCliente + " Numero de cliente: " + numCliente + " Fecha de alta: " + fechaAlta;
+        return numCliente + "," + nombreCliente + "," + fechaAlta;
     }
-
-    /*public Cliente tomarDatos(String nombreCliente, int numCliente, String fechaAlta) {
-
-    }*/
 
     public int getNumCliente() {
         return numCliente;
@@ -93,8 +102,5 @@ public class Cliente {
 
     public void setFechaAlta(String fechaAlta) {
         this.fechaAlta = fechaAlta;
-    }
-
-    
-    
+    }   
 }
