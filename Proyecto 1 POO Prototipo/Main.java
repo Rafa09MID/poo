@@ -21,7 +21,7 @@ public class Main {
                     break;
 
                 case 2 :
-                    //Factura.cargarFacturas();
+                    gestionDatos.cargarFacturas();
                     break;
 
                 case 3 :
@@ -29,7 +29,7 @@ public class Main {
                     break;
 
                 case 4 :
-                    //Factura.filtrarFacturas();
+                    Factura.filtrarFacturas(board);
 
 
                 case 5 : 

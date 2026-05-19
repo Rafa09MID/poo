@@ -1,13 +1,9 @@
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Scanner;
-import java.util.ArrayList;
 import java.util.List;
-//no se
+
 
 public class Cliente {
     private static final String ARCHIVO_CLIENTE = "clientes.txt";
@@ -27,9 +23,6 @@ public class Cliente {
         this.nombreCliente = nombreCliente;
         this.fechaAlta = fechaAlta;
     }
-
-    
-
 
     public static void mostrarClienteRegistrados(List<Cliente> clientes) {
         System.out.println("| Número de cliente | Nombre Cliente | Fecha de alta");
@@ -75,8 +68,8 @@ public class Cliente {
         }
         return ultimoNumero + 1;
     }
-
-    public String toCsvLine() {
+    
+    public String toTxtLine() {
         return numCliente + "," + nombreCliente + "," + fechaAlta;
     }
 
@@ -102,5 +95,5 @@ public class Cliente {
 
     public void setFechaAlta(String fechaAlta) {
         this.fechaAlta = fechaAlta;
-    }   
+    }  
 }

@@ -9,3 +9,4 @@ numFactura,numCliente,fechaEmision,descripcion,importe,iva,total
 8,8,2024-04-20,Servicio H,420.00,67.20,487.20
 9,9,2024-05-01,Servicio I,60.00,9.60,69.60
 10,10,2024-05-10,Servicio J,500.00,80.00,580.00
+11,12,2026-05-15,Compra de lolquemal,50000.0,8000.0,58000.0
